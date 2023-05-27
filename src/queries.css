@@ -1,0 +1,87 @@
+/* 1037px */
+@media (max-width: 64.81em) {
+  html {
+    font-size: 52.6%;
+  }
+  .input-bet {
+    padding: 1rem;
+  }
+}
+
+@media (max-width: 47.06em) {
+  .input-bet {
+    font-size: 1.4rem;
+  }
+
+  .title {
+    font-size: 2.6rem;
+  }
+
+  .instructions {
+    font-size: 1.6rem;
+  }
+
+  .user-bet h1 {
+    font-size: 2rem;
+  }
+
+  .money {
+    font-size: 2rem;
+  }
+
+  .roll-dice-btn {
+    padding: 1.2rem;
+  }
+}
+
+@media (max-width: 40.75em) {
+  .bet-form {
+    flex-direction: column;
+  }
+  .die {
+    height: 5rem;
+    width: 5rem;
+  }
+  .tenzies-container {
+    padding: 1.4rem;
+  }
+}
+
+@media (max-width: 25.5em) {
+  .dice-container {
+    gap: 1rem;
+  }
+
+  .user-bet h1 {
+    font-size: 1.6rem;
+  }
+
+  .money {
+    font-size: 1.6rem;
+  }
+
+  .tenzies-container {
+    gap: 0.8rem;
+  }
+
+  .roll-dice-btn {
+    font-size: 1.6rem;
+    padding: 0.8rem 2.4rem;
+  }
+
+  .btn-bet {
+    font-size: 1.6rem;
+    padding: 0.8rem 2.6rem;
+  }
+
+  .instructions {
+    font-size: 1.4rem;
+  }
+}
+
+@media (max-width: 19.5em) {
+  .die {
+    height: 4.2rem;
+    width: 4.2rem;
+  }
+}
