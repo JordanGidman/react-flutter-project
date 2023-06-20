@@ -38,6 +38,7 @@ function App() {
     userBet: "",
     userNumber: "",
   });
+  const [notification, setNotification] = React.useState("");
 
   // const checkBetWin = function () {
 
@@ -49,7 +50,7 @@ function App() {
     const allSame = dice.every((die) => die.value === val);
 
     if (allHeld && !allSame) {
-      console.log(`Game Lost. All numbers Held But not Matching`);
+      setNotification(`Game Lost. All numbers Held But are not ALL Matching`);
       setMoney((prevMoney) => ({
         ...prevMoney,
         userBet: "",
@@ -61,7 +62,7 @@ function App() {
 
     if (allHeld && allSame) {
       if (rollCount === money.userNumber) {
-        console.log(`You Won`);
+        setNotification(`Game Over! Won ${money.userBet}`);
         setMoney((prevMoney) => ({
           ...prevMoney,
           userMoney: (money.userMoney += money.userBet * 2),
@@ -70,7 +71,7 @@ function App() {
         }));
       }
       if (rollCount !== money.userNumber) {
-        console.log(`You Lose`);
+        setNotification(`Game Over! No Bet Win`);
         setMoney((prevMoney) => ({
           ...prevMoney,
           userBet: "",
@@ -116,14 +117,20 @@ function App() {
         <p className="instructions">
           Roll until all dice are the same. Click each die to freeze it at its
           current value between rolls. <br /> Bet on the number of rolls you
-          think it will take. 2:1 returns if you win.
+          think it will take. 2:1 odds if you win.
         </p>
         <div className="dice-container">{diceEls}</div>
         <div className="roll-dice-btn" onClick={rollDice}>
           {flutter === true ? "New Game" : "Roll Dice"}
         </div>
         <h2 className="roll-count">Rolls: {rollCount}</h2>
-        <Bet money={money} setMoney={setMoney} rollCount={rollCount} />
+        <Bet
+          money={money}
+          setMoney={setMoney}
+          rollCount={rollCount}
+          notification={notification}
+          setNotification={setNotification}
+        />
       </main>
     </div>
   );

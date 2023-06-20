@@ -5,7 +5,8 @@ export default function Bet(props) {
     amount: "",
     number: "",
   });
-  const [notification, setNotification] = React.useState("");
+
+  const { notification, setNotification } = props;
   // update state on each keypress
   const handleChange = function (event) {
     const { name, value, type, checked } = event.target;
@@ -47,7 +48,7 @@ export default function Bet(props) {
       return;
     }
     if (betData.amount > props.money.userMoney) {
-      console.log(`Not Enough Money`);
+      setNotification(`Not Enough Money`);
       return;
     } else
       props.setMoney((prevMoney) => {
